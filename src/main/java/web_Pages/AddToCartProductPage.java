@@ -24,4 +24,7 @@ public class AddToCartProductPage extends testBase
 	@FindBy(id="btn-checkout")
 	public WebElement checkOutButton;
 	
+	@FindBy(xpath="//div[@class='pip-summary']/child::h1")
+	public WebElement productText;
+	
 }

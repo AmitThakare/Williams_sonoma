@@ -21,4 +21,8 @@ public class SellPage {
 	
 	@FindBy(xpath="//a[contains(text(),'saved')]")
 	public WebElement savedProduct;
+	
+	@FindBy(xpath="//div[@class='cart-table-row-title']")
+	public WebElement productName;
+	
 }

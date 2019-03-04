@@ -87,6 +87,8 @@ public class testBase {
 		
 		public void clickOnWebElement(WebElement element)
 		{
+			WebDriverWait wait=new WebDriverWait(driver, 5);
+			wait.until(ExpectedConditions.visibilityOf(element));
 			element.click();
 		}
 		
@@ -122,21 +124,24 @@ public class testBase {
 			
 		}
 		
-		
+		public String getText(WebElement element)
+		{
+			return element.getText();
+		}
 		public boolean isPopupPresent(WebElement element) throws InterruptedException
 		{
-		
+		Thread.sleep(3000);
 		try
 		{
-		
-			Thread.sleep(2000);
+		if(element.isDisplayed())
+		return true;
 			
-				return element.isDisplayed();
 		}
 			catch(NoSuchElementException ex)
 			{
 				return false;
 			}
+		return true;
 			
 		}
 
@@ -147,7 +152,8 @@ public class testBase {
 			if(isPopupPresent(element))
 			{
 			
-				element.click();
+				clickOnWebElement(element);
+				Thread.sleep(8000);
 			}
 
 		}

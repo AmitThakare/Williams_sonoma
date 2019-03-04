@@ -25,7 +25,7 @@ public class ElectricTeaKettlesPage extends testBase{
 	@FindBy(xpath="//div[@id='subCatListContainer']/ul/li")
 	public List<WebElement> totalKettles;
 	
-	@FindBy(xpath="//span[text()='minimize']") 
+	@FindBy(xpath="//a[@class='stickyOverlayMinimizeButton']") 
 	public WebElement popupBoxCloseBtn;
 	
 	
@@ -38,6 +38,7 @@ public class ElectricTeaKettlesPage extends testBase{
 		String kettleXpath ="//div[@id='subCatListContainer']/ul/li["+randomSelectedKettle+"]";
 		
 		clickOnWebElement(driver.findElement(By.xpath(kettleXpath)));
+		
 	}
 	
 	
